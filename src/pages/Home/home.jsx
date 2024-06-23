@@ -12,9 +12,9 @@ import {
   IconButton,
 } from "@mui/material";
 import MoreHorizIcon from "@mui/icons-material/MoreHoriz";
-import EmojiEmotionsIcon from "@mui/icons-material/EmojiEmotions";
 import ModeCommentOutlinedIcon from "@mui/icons-material/ModeCommentOutlined";
 import HomePageModal from "../../components/homePageModal";
+import "./home.css";
 
 const posts = [
   {
@@ -29,6 +29,17 @@ const posts = [
   },
   {
     id: 2,
+    author: "Marvin McKinney",
+    emoji: "😞",
+    content:
+      "Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.",
+    comments: 15,
+    avatar: "https://via.placeholder.com/50",
+    time: "8mins ago",
+    edited: true,
+  },
+  {
+    id: 3,
     author: "Marvin McKinney",
     emoji: "😞",
     content:
@@ -62,122 +73,58 @@ const Home = () => {
 
   return (
     <Box
-      sx={{
-        margin: 0,
-        backgroundColor: "#131319",
-        color: "white",
-        fontFamily: "Roboto, sans-serif",
-      }}
+      className="page-container"
     >
-      <Container
-        maxWidth="sm"
-        sx={{
-          bgcolor: "#131319",
-          color: "white",
-          padding: "20px",
-          minHeight: "100vh",
-          minWidth: "750px",
-        }}
-      >
+
+      <Container className="component-container">
         <Typography
-          sx={{ color: "white", letterSpacing: "0.5px" }}
-          align="left"
+        className="main-heading-title"
           variant="h4"
-          gutterBottom
         >
           Hello Jane
         </Typography>
         <Typography
-          sx={{
-            color: "grey",
-            mb: 4,
-            letterSpacing: "0.5px",
-            maxWidth: "550px",
-          }}
-          align="left"
+        className="main-heading-body"
           variant="body1"
-          gutterBottom
         >
           How are you doing today? Would you like to share something with the
           community 🤗
         </Typography>
 
-        <Box onClick={handleCardClick} sx={{ cursor: "pointer" }}>
+        <Box onClick={handleCardClick} className="cards-container">
           <Box
-            sx={{
-              bgcolor: "#27292d",
-              mb: 1,
-              mt: 2,
-              padding: "25px 20px",
-              borderRadius: "12px",
-              border: "2px solid #35373b",
-            }}
+          className="create-post-card"
           >
             <Typography
-              sx={{
-                color: "#aaaaaa",
-                mb: 2,
-                letterSpacing: "0.75px",
-                fontSize: "18px",
-              }}
-              align="left"
+            className="create-post-card-title"
               variant="body1"
-              gutterBottom
             >
               Create post
             </Typography>
 
             <Box
-              sx={{
-                display: "flex",
-                width: "100%",
-                justifyContent: "center",
-                position: "relative",
-              }}
+            className="create-post-card-input-container"
             >
               <IconButton
-                sx={{
-                  color: "#fff",
-                  borderRadius: "50%",
-                  width: "50px",
-                  height: "50px",
-                  position: "absolute",
-                  top: "12%",
-                  left: "2%",
-                  backgroundColor: "#27292d",
-                  "&:hover": { backgroundColor: "#27292d" },
-                  mr: 2,
-                }}
+              className="input-icon-container"
               >
                 <Typography
+              className="input-icon"
                   component="span"
-                  align="left"
                   variant="body2"
-                  sx={{ fontSize: "18px" }}
                 >
                   💬
                 </Typography>
               </IconButton>
               <input
+              className="input-field"
                 type="text"
                 placeholder="How are you feeling today?"
-                style={{
-                  width: "100%",
-                  height: "50px",
-                  fontSize: "16px",
-                  letterSpacing: "0.5px",
-                  padding: "10px",
-                  paddingLeft: "80px",
-                  color: "white",
-                  backgroundColor: "#191920",
-                  border: "none",
-                  borderRadius: "8px",
-                  marginBottom: "16px",
-                }}
               />
             </Box>
-            <Box sx={{ display: "flex", justifyContent: "flex-end" }}>
+            <Box className="create-post-card-button-box" sx={{ display: "flex", justifyContent: "flex-end" }}>
               <Button
+              className="create-post-card-button"
                 sx={{ width: "100px", height: "40px" }}
                 variant="contained"
                 color="primary"
