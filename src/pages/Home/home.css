@@ -92,13 +92,6 @@
     margin-bottom: 16px;
 }
 
-@media screen and (max-width: 432px) {
-    .component-container{
-        min-width: 150px;
-
-    }
-}
-
 .create-post-card-button-box {
     display: flex;
     justify-content: flex-end;
@@ -107,6 +100,128 @@
 .create-post-card-button {
     width: 100px;
     height: 40px;
+}
+
+.post-card-container {
+    margin-bottom: 1rem;
+    background-color: #27292d !important;
+    border-radius: 12px !important;
+    border: 2px solid #35373b;
+    padding: 25px 20px;
+}
+
+.post-card {
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+}
+
+.post-card-header {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    margin-bottom: 1rem;
+}
+
+.post-card-header-avatar {
+    width: 50px !important;
+     height: 50px !important;
+}
+
+.post-card-header-title-and-icon-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    margin-left: 0.5rem;
+}
+
+.post-card-header-title-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.post-card-header-title {
+    color: #aaaaaa;
+    font-weight: normal !important;
+    font-size: 18px !important;
+    letter-spacing: 0.5px !important;
+}
+
+.post-card-header-subtitle {
+    color: grey;
+    font-size: 14px !important;
+    letter-spacing: 0.5px !important;
+}
+
+.post-card-header-icon {
+    color: grey !important;
+}
+
+.post-card-footer-container {
+    display: flex;
+     flex-direction: column;
+}
+
+.post-card-body-container {
+    display: flex;
+    align-items: flex-start;
+    margin-top: 0.5rem;
+    background-color: #191920;
+    padding: 20px 15px;
+    border-radius: 8px;
+}
+
+.post-card-body-avatar-container {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.post-card-body-avatar-button {
+    color: #fff !important;
+    border-radius: 50% !important;
+    width: 50px;
+    height: 50px;
+    background-color: #27292d !important;
+    margin-right: 1rem !important;
+}
+
+.post-card-body-avatar-button :hover {
+    background-color: #27292d !important;
+}
+
+.post-card-body-avatar {
+    font-size: 18px !important;
+    text-align: left;
+}
+
+.post-card-body {
+    color: grey;
+    font-size: 16px !important;
+    letter-spacing: 0.5px !important;
+    text-align: left;
+}
+
+.post-card-body-comments {
+    color: #aaaaaa;
+    margin-top: 1rem !important;
+    display: flex;
+    align-items: center;
+}
+
+.post-card-body-comments-icon {
+    margin-right: 8px;
+    margin-left: 2px;
+    display: flex;
+    align-items: center;
+}
+
+@media screen and (max-width: 432px) {
+    .component-container{
+        min-width: 150px;
+
+    }
 }
 
 @media screen and (min-width: 1024px) {

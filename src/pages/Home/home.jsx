@@ -38,17 +38,6 @@ const posts = [
     time: "8mins ago",
     edited: true,
   },
-  {
-    id: 3,
-    author: "Marvin McKinney",
-    emoji: "😞",
-    content:
-      "Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.",
-    comments: 15,
-    avatar: "https://via.placeholder.com/50",
-    time: "8mins ago",
-    edited: true,
-  },
 ];
 
 const Home = () => {
@@ -72,44 +61,26 @@ const Home = () => {
   };
 
   return (
-    <Box
-      className="page-container"
-    >
-
+    <Box className="page-container">
       <Container className="component-container">
-        <Typography
-        className="main-heading-title"
-          variant="h4"
-        >
+        <Typography className="main-heading-title" variant="h4">
           Hello Jane
         </Typography>
-        <Typography
-        className="main-heading-body"
-          variant="body1"
-        >
+        <Typography className="main-heading-body" variant="body1">
           How are you doing today? Would you like to share something with the
           community 🤗
         </Typography>
 
         <Box onClick={handleCardClick} className="cards-container">
-          <Box
-          className="create-post-card"
-          >
-            <Typography
-            className="create-post-card-title"
-              variant="body1"
-            >
+          <Box className="create-post-card">
+            <Typography className="create-post-card-title" variant="body1">
               Create post
             </Typography>
 
-            <Box
-            className="create-post-card-input-container"
-            >
-              <IconButton
-              className="input-icon-container"
-              >
+            <Box className="create-post-card-input-container">
+              <IconButton className="input-icon-container">
                 <Typography
-              className="input-icon"
+                  className="input-icon"
                   component="span"
                   variant="body2"
                 >
@@ -117,15 +88,16 @@ const Home = () => {
                 </Typography>
               </IconButton>
               <input
-              className="input-field"
+                className="input-field"
                 type="text"
                 placeholder="How are you feeling today?"
               />
             </Box>
-            <Box className="create-post-card-button-box" sx={{ display: "flex", justifyContent: "flex-end" }}>
+            <Box
+              className="create-post-card-button-box"
+            >
               <Button
-              className="create-post-card-button"
-                sx={{ width: "100px", height: "40px" }}
+                className="create-post-card-button"
                 variant="contained"
                 color="primary"
               >
@@ -136,147 +108,60 @@ const Home = () => {
 
           <List>
             {posts.map((post) => (
-              <Card
-                key={post.id}
-                sx={{
-                  mb: 2,
-                  bgcolor: "#27292d",
-                  borderRadius: "12px",
-                  border: "2px solid #35373b",
-                  padding: "25px 20px",
-                }}
-              >
+              <Card key={post.id} className="post-card-container">
                 <CardContent sx={{ padding: "0 !important" }}>
-                  <Box
-                    alignItems="flex-start"
-                    sx={{
-                      display: "flex",
-                      alignItems: "flex-start",
-                      flexDirection: "column",
-                    }}
-                  >
-                    <Box
-                      sx={{
-                        display: "flex",
-                        flexDirection: "row",
-                        width: "100%",
-                        mb: 2,
-                      }}
-                    >
+                  <Box className="post-card">
+                    <Box className="post-card-header">
                       <ListItemAvatar>
                         <Avatar
-                          sx={{ width: "50px", height: "50px" }}
+                          className="post-card-header-avatar"
                           alt={post.author}
                           src={post.avatar}
                         />
                       </ListItemAvatar>
-                      <Box
-                        sx={{
-                          display: "flex",
-                          flexDirection: "row",
-                          justifyContent: "space-between",
-                          width: "100%",
-                          ml: 1,
-                        }}
-                      >
-                        <Box
-                          sx={{
-                            display: "flex",
-                            flexDirection: "column",
-                            alignItems: "flex-start",
-                          }}
-                        >
-                          <Typography
-                            sx={{
-                              color: "#aaaaaa",
-                              fontWeight: "normal",
-                              fontSize: "18px",
-                              letterSpacing: "0.5px",
-                            }}
-                          >
+                      <Box className="post-card-header-title-and-icon-container">
+                        <Box className="post-card-header-title-container">
+                          <Typography className="post-card-header-title">
                             {post.author}
                           </Typography>
-                          <Typography
-                            sx={{
-                              color: "grey",
-                              fontSize: "14px",
-                              letterSpacing: "0.5px",
-                            }}
-                          >
+                          <Typography className="post-card-header-subtitle">
                             {post.time} {post.edited && "• Edited"}
                           </Typography>
                         </Box>
-                        <IconButton sx={{ color: "grey" }}>
+                        <IconButton className="post-card-header-icon">
                           <MoreHorizIcon />
                         </IconButton>
                       </Box>
                     </Box>
-                    <Box sx={{ display: "flex", flexDirection: "column" }}>
-                      <Box
-                        sx={{
-                          display: "flex",
-                          alignItems: "flex-start",
-                          mt: 1,
-                          backgroundColor: "#191920",
-                          padding: "20px 15px",
-                          borderRadius: "8px",
-                        }}
-                      >
-                        <Box
-                          sx={{ display: "flex", justifyContent: "flex-end" }}
-                        >
-                          <IconButton
-                            sx={{
-                              color: "#fff",
-                              borderRadius: "50%",
-                              width: "50px",
-                              height: "50px",
-                              backgroundColor: "#27292d",
-                              "&:hover": { backgroundColor: "#27292d" },
-                              mr: 2,
-                            }}
-                          >
+                    <Box className="post-card-footer-container">
+                      <Box className="post-card-body-container">
+                        <Box className="post-card-body-avatar-container">
+                          <IconButton className="post-card-body-avatar-button">
                             <Typography
+                              className="post-card-body-avatar"
                               component="span"
-                              align="left"
                               variant="body2"
-                              sx={{ fontSize: "18px" }}
                             >
                               {post.emoji}
                             </Typography>
                           </IconButton>
                         </Box>
                         <Typography
+                          className="post-card-body"
                           component="span"
-                          align="left"
                           variant="body2"
-                          sx={{
-                            color: "grey",
-                            fontSize: "16px",
-                            letterSpacing: "0.5px",
-                          }}
                         >
                           {post.content}
                         </Typography>
                       </Box>
                       <Typography
+                        className="post-card-body-comments"
                         component="span"
                         variant="body2"
-                        sx={{
-                          color: "#aaaaaa",
-                          mt: 2,
-                          display: "flex",
-                          alignItems: "center",
-                        }}
                       >
                         <Box
+                          className="post-card-body-comments-icon"
                           component="span"
-                          sx={{
-                            marginRight: "8px",
-                            marginLeft: "2px",
-                            display: "flex",
-                            alignItems: "center",
-                          }}
                         >
                           <ModeCommentOutlinedIcon sx={{ color: "#aaaaaa" }} />
                         </Box>
